@@ -11,7 +11,16 @@ let arr1=[3,5,1]
 let arr2=[4,2]
 
 function getSortedMerged(array1,arry2){
-   let arr=[...array1,...arry2]
+//    let arr=[...array1,...arry2]
+    let arr=[];
+    let k=0;
+    for(let i=0;i<array1.length;i++){
+        arr[k++]=array1[i];
+    }
+     for(let i=0;i<arry2.length;i++){
+        arr[k++]=arry2[i];
+    }
+    
 
      for(let i=0;i<arr.length;i++){
         for(let j=i+1;j<arr.length;j++){
