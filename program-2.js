@@ -4,20 +4,22 @@
 // Expected Output: [1, 2, 3, 4, 5, 6, 7];
 
 //---first approcch--1
-var examplearr=[];
-var i=0;
-function flatArray(array){
-    for(index of array){
-        if(typeof index =="number"){
-            examplearr[i++]=index;
-        }else{
+var examplearr = [];
+var i = 0;
+
+function flatArray(array) {
+    for (let index of array) {
+        if (Array.isArray(index)) {
             flatArray(index);
+        } else {
+            examplearr[i++] = index;
         }
     }
 }
 
 flatArray([1, 2, [3, 4], [5, [6, 7]]]);
-console.log(examplearr)
+console.log(examplearr);
+
 //another approch 
 let arr=[1, 2, [3, 4], [5, [6, 7]]];
 let newArr1=arr.flat(Infinity);
